@@ -9,7 +9,6 @@ public class LuaMrg : Singleton<LuaMrg>
 {
     /// <summary>Lua 脚本所在目录（相对 Assets）</summary>
     private static readonly string LuaFolder = "LuaScript/Lua";
-
     LuaEnv luaEnv;
     void Start()
     {

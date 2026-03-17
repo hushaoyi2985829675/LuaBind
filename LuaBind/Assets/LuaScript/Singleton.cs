@@ -5,7 +5,6 @@ using UnityEngine;
 public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 {
     private static T _instance;
-
     public static T Instance
     {
         get
@@ -16,12 +15,15 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
                 if(obj == null)
                 {
                     obj = new GameObject(typeof(T).Name);
-                    DontDestroyOnLoad(obj);
+                    if (Application.isPlaying)
+                        DontDestroyOnLoad(obj);
                     _instance = obj.AddComponent<T>();
                 }
                 else
                 {
-                   _instance = obj.GetComponent<T>();
+                    _instance = obj.GetComponent<T>();
+                    if (_instance == null)
+                        _instance = obj.AddComponent<T>();
                 }
                 
             }

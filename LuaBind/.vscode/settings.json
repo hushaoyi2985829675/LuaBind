@@ -1,0 +1,5 @@
+{
+    "omnisharp.dotnet.environmentVariables": {
+        "DOTNET_CLI_UI_LANGUAGE": "zh-Hans"
+    }
+}
