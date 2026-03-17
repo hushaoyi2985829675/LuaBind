@@ -494,7 +494,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   luaBehaviour:
-    luaScript: MyPanel
+    luaScript: MyTest
     luaBindValueListGameObject:
     - name: GameObj
       valueList:
@@ -503,6 +503,7 @@ MonoBehaviour:
     - name: mBtn
       valueList:
       - {fileID: 622322735}
+      - {fileID: 1452261624}
 --- !u!1 &1452261622
 GameObject:
   m_ObjectHideFlags: 0

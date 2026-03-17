@@ -18,8 +18,8 @@ public class DataInfo<T>
 public class LuaBehaviour
 {
     private string path = "Assets/LuaScript/Lua/";
-    private Regex regexStart = new Regex("自动生成");
-    private Regex regexEnd = new Regex("结束生成");
+    private Regex regexStart = new Regex("自动绑定");
+    private Regex regexEnd = new Regex("结束绑定");
     private string autoField = "{0} = nil";
     public string luaScript;
 
@@ -29,6 +29,7 @@ public class LuaBehaviour
     {
         luaBindValueListGameObject?.Clear();
         luaBindValueListComponent?.Clear();
+        //清除文件
         Debug.Log("清除Lua变量成功");
     }
     LuaBindType luaBindType;
@@ -62,7 +63,6 @@ public class LuaBehaviour
 
     public void WriteLua()
     {
-        Debug.Log("WriteLua: " + path + this.luaScript + ".lua");
         int startIndex = 0;
         int endIndex = 0;
         string[] luaScriptLines = File.ReadAllLines(path + this.luaScript + ".lua");
