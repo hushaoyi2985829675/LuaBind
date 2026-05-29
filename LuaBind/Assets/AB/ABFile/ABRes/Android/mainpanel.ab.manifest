@@ -1,0 +1,25 @@
+ManifestFileVersion: 0
+CRC: 1956411340
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: a5bab43e9d6299713190b4c05a625dca
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2d8df09e698f722ada1caa03d3413830
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: a5bab43e9d6299713190b4c05a625dca
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- "Assets/UI/MainPanel/\u5BA0\u7269.png"
+- "Assets/UI/MainPanel/\u961F\u4F0D.png"
+- "Assets/UI/MainPanel/\u5145\u503C.png"
+- "Assets/UI/MainPanel/\u7FC5\u8180.png"
+Dependencies: []

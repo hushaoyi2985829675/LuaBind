@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package ws;
+
+// 消息号定义（可继续扩展）
+enum WsMsgId {
+  WS_MSG_ID_UNSPECIFIED = 0;
+  WS_MSG_ID_PING = 1001;
+  WS_MSG_ID_NOTICE = 2001;
+}
+
+// 统一外层信封，WebSocket 固定传这个
+message WsEnvelope {
+  int32 msgId = 1;     // 对应 WsMsgId
+  int32 errorCode = 2; // 0 表示成功，非 0 表示错误
+  bytes data = 3;      // 实体消息的 protobuf 二进制，具体类型由 msgId 决定
+}

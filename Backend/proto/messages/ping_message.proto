@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package ws;
+
+message PingMessage {
+  int64 clientTime = 1;
+  string content = 2;
+}

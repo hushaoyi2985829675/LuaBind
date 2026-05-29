@@ -1,0 +1,6 @@
+# ResourceBundleMap v1
+Assets/UI/Activity/Aciu.prefab	activity.ab
+Assets/UI/MainPanel/充值.png	mainpanel.ab
+Assets/UI/MainPanel/宠物.png	mainpanel.ab
+Assets/UI/MainPanel/翅膀.png	mainpanel.ab
+Assets/UI/MainPanel/队伍.png	mainpanel.ab

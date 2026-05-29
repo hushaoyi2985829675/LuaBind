@@ -1,0 +1,7 @@
+ManifestFileVersion: 0
+CRC: 1802726289
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: activity.ab
+      Dependencies: {}

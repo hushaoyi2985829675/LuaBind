@@ -1,0 +1,10 @@
+{
+  "name": "com.local.effect-image-assembler",
+  "version": "0.1.0",
+  "displayName": "Effect Image Assembler",
+  "description": "Unity UGUI editor tool that reconstructs a static UI prefab from a final PNG reference image and a folder of PNG cut assets.",
+  "unity": "2021.3",
+  "author": {
+    "name": "Local Tools"
+  }
+}

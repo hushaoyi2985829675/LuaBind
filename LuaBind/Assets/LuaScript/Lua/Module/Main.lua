@@ -1,0 +1,2 @@
+
+require("Framework.function")

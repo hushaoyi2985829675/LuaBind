@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ws;
+
+// 前端 -> 后端 上行请求体
+// data 是具体业务实体消息的 protobuf 二进制
+// 具体类型由 msgId 决定
+message WsClientRequest {
+  int32 msgId = 1;
+  bytes data = 3;
+}

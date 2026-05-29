@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Tencent is pleased to support the open source community by making xLua available.
  * Copyright (C) 2016 THL A29 Limited, a Tencent company. All rights reserved.
  * Licensed under the MIT License (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
@@ -11,6 +11,7 @@ using System;
 using XLua;
 using System.Reflection;
 using System.Linq;
+using UnityEngine;
 
 //配置的详细介绍请看Doc下《XLua的配置.doc》
 public static class ExampleConfig
@@ -247,6 +248,46 @@ public static class ExampleConfig
     //    }
     //}
     //--------------end 热补丁自动化配置-------------------------
+
+    // LuaBind：C# 调用 Lua 时用到的委托，必须在此登记并执行 XLua → Generate Code
+    private static Type BuildLuaBehaviourCtorDelegate()
+    {
+        // 部分 IDE 在项目索引不同步时会误报找不到 LuaBehaviour，这里改为运行时解析类型以避免误报。
+        Type luaBehaviourType = AppDomain.CurrentDomain
+            .GetAssemblies()
+            .SelectMany(a =>
+            {
+                try
+                {
+                    return a.GetTypes();
+                }
+                catch (ReflectionTypeLoadException e)
+                {
+                    return e.Types.Where(t => t != null);
+                }
+            })
+            .FirstOrDefault(t => t.Name == "LuaBehaviour");
+
+        if (luaBehaviourType == null)
+        {
+            Debug.LogWarning("[ExampleConfig] LuaBehaviour not found, fallback to MonoBehaviour for XLua delegate generation.");
+            luaBehaviourType = typeof(MonoBehaviour);
+        }
+
+        return typeof(Action<,,,,>).MakeGenericType(
+            typeof(LuaTable),
+            luaBehaviourType,
+            typeof(GameObject),
+            typeof(Transform),
+            typeof(LuaTable));
+    }
+
+    [CSharpCallLua]
+    public static List<Type> LuaBindCSharpCallLua = new List<Type>
+    {
+        BuildLuaBehaviourCtorDelegate(),
+        typeof(Action<LuaTable>),
+    };
 
     //黑名单
     [BlackList]

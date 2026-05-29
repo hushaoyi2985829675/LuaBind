@@ -1,5 +1,24 @@
 {
+    "omnisharp.solution": "LuaBind.sln",
+    "dotnet.defaultSolution": "LuaBind.sln",
+    "omnisharp.useModernNet": false,
+    "omnisharp.enableRoslynAnalyzers": true,
+    "omnisharp.enableMsBuildLoadProjectsOnDemand": false,
+    "omnisharp.enableAsyncCompletion": true,
+    "omnisharp.projectLoadTimeout": 180,
+    "csharp.semanticHighlighting.enabled": true,
+    "dotnet.backgroundAnalysis.compilerDiagnosticsScope": "fullSolution",
     "omnisharp.dotnet.environmentVariables": {
         "DOTNET_CLI_UI_LANGUAGE": "zh-Hans"
-    }
+    },
+    "[csharp]": {
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": false,
+            "strings": true
+        },
+        "editor.suggest.showSnippets": true,
+        "editor.tabCompletion": "on"
+    },
+    "dotnet.completion.showCompletionItemsFromUnimportedNamespaces": true
 }
